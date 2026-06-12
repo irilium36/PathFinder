@@ -1,0 +1,55 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --bg: #08111f;
+  --panel: rgba(10, 17, 30, 0.78);
+  --line: rgba(148, 163, 184, 0.16);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-2: #8b5cf6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(circle at top, rgba(56,189,248,.12), transparent 25%), var(--bg); color: var(--text); }
+button, input, textarea { font: inherit; }
+textarea, input, button { border-radius: 14px; }
+.app-shell { min-height: 100vh; padding: 24px; }
+.hero, .workspace-top { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.hero h1 { font-size: clamp(32px, 4vw, 54px); margin: 6px 0 10px; }
+.eyebrow { letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-size: 12px; }
+.hero-copy, .workspace-top p, .card p, .summary-card { color: var(--muted); line-height: 1.6; }
+.dashboard { margin-top: 22px; display: grid; grid-template-columns: 320px 1fr 320px; gap: 18px; }
+.sidebar, .workspace { display: flex; flex-direction: column; gap: 18px; }
+.card, .summary-card, .network-canvas { background: var(--panel); border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(0,0,0,.25); backdrop-filter: blur(18px); }
+.card { padding: 18px; border-radius: 22px; }
+.upload-form, .row-actions, .hero-actions, .stats, .tag-list { display: flex; gap: 10px; flex-wrap: wrap; }
+.upload-form { flex-direction: column; }
+input[type='file'], textarea { width: 100%; background: rgba(15,23,42,.72); border: 1px solid var(--line); color: var(--text); padding: 12px 14px; }
+textarea { resize: vertical; min-height: 220px; }
+.btn { border: 1px solid var(--line); background: rgba(15,23,42,.66); color: var(--text); padding: 12px 16px; cursor: pointer; transition: .2s ease; }
+.btn:hover { transform: translateY(-1px); border-color: rgba(56,189,248,.5); }
+.btn.primary { background: linear-gradient(135deg, var(--accent-2), var(--accent)); border: none; }
+.btn.danger { background: linear-gradient(135deg, #f97316, #ef4444); border: none; }
+.workspace { min-height: 760px; }
+.stats strong { display: block; font-size: 28px; }
+.stats span { display: block; color: var(--muted); font-size: 12px; }
+.network-canvas { height: 660px; border-radius: 28px; overflow: hidden; }
+.summary-card { border-radius: 20px; padding: 16px 18px; }
+.detail-name { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+.tag-list span { padding: 6px 10px; border-radius: 999px; background: rgba(56,189,248,.12); color: #bae6fd; }
+.status { margin-top: 10px; color: var(--muted); }
+.full-content-card { min-height: 260px; }
+.full-content-body { white-space: pre-wrap; line-height: 1.75; color: var(--text); background: rgba(15,23,42,.55); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+.theme-light { color-scheme: light; --bg: #eff6ff; --panel: rgba(255,255,255,0.8); --line: rgba(15,23,42,.12); --text: #0f172a; --muted: #475569; }
+.theme-light body { background: linear-gradient(180deg, #f8fbff, #dbeafe); }
+.theme-light input[type='file'], .theme-light textarea { background: #f1f5f9; border-color: rgba(15,23,42,.15); color: #0f172a; }
+.theme-light .btn { background: rgba(255,255,255,0.7); border-color: rgba(15,23,42,.15); }
+.theme-light .btn:hover { border-color: rgba(56,189,248,.6); }
+.theme-light .btn.primary { background: linear-gradient(135deg, #8b5cf6, #38bdf8); border: none; color: #ffffff; }
+.theme-light .btn.danger { background: linear-gradient(135deg, #f97316, #ef4444); border: none; color: #ffffff; }
+.theme-light .tag-list span { background: rgba(56,189,248,.1); color: #0369a1; }
+.theme-light .full-content-body { background: #f1f5f9; border-color: rgba(15,23,42,.15); }
+.theme-light .vis-network .vis-node { color: #0f172a !important; }
+.theme-light .vis-network .vis-node .vis-label { color: #0f172a !important; fill: #0f172a !important; }
+.expand-btn { margin-top: 16px; }
+@media (max-width: 1220px) { .dashboard { grid-template-columns: 1fr; } .hero, .workspace-top { flex-direction: column; align-items: stretch; } .network-canvas { height: 520px; } }
