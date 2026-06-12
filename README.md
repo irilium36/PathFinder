@@ -23,15 +23,25 @@ COZE_USER_ID=pathfinder-user
 
 ## 部署到云平台
 
-### Render
+### Railway
 
 1. 将项目上传到 GitHub
-2. 在 Render 创建 Web Service
-3. 选择仓库后，Render 会自动读取 `render.yaml`
-4. 在 Render 控制台配置环境变量
-5. 部署完成后即可在线访问
+2. 在 Railway 新建项目并选择 GitHub 仓库
+3. Railway 会自动识别 `Procfile` 或手动设置启动命令：`gunicorn app:app`
+4. 在 Railway 的 Variables 中配置环境变量
+5. 部署完成后即可获得线上访问地址
 
-### 其他平台
+### Railway 环境变量
+
+```env
+COZE_API_URL=https://api.coze.cn/open_api/v2/chat
+COZE_API_KEY=your_api_key_here
+COZE_API_TYPE=chat
+COZE_BOT_ID=your_bot_id_here
+COZE_USER_ID=pathfinder-user
+```
+
+### 其他支持 Python 的平台
 
 如果平台支持 Python Web 服务，使用以下命令即可：
 
