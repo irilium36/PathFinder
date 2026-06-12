@@ -3,6 +3,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "gunicorn wsgi:app --timeout 600"
+    "startCommand": "gunicorn app:app --timeout 600"
   }
 }
